@@ -9,6 +9,8 @@ body {
   padding: 0 20px;
   min-width: 980px;
   max-width: 1400px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
 }
 
 /* Layout */
@@ -20,10 +22,23 @@ main {
   padding: 20px 0;
 }
 
+section {
+  text-indent: 2rem;
+}
+
+h2 {
+  font: bold 25px "Arvo";
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  letter-spacing: 3px;
+}
+
 /* header and footer */
 
 header {
   border-bottom: 5px solid #aa6666;
+  font: bold 30px "Arvo";
+  text-align: center;
 }
 
 footer {
@@ -32,4 +47,13 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+a {
+  color: brown;
+}
+
+a:hover, a:focus {
+  color: #281b0d;
+  text-decoration: none;
 }
