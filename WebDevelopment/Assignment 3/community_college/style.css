@@ -77,3 +77,25 @@ a[href^="http"]::after {
   background-image: url('https://mdn.github.io/shared-assets/images/examples/external-link-52.png');
   background-size: cover;
 }
+
+nav li a {
+  font-family: "Arve";
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  line-height: 3;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid brown;
+}
+
+nav li a:focus, nav li a:hover {
+  color: white;
+  background: grey;
+}
+
+nav li a:active {
+  color: white;
+  background: black;
+}
