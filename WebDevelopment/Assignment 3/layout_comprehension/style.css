@@ -25,17 +25,23 @@ img {
 .grid {
   margin: 0 auto;
   max-width: 980px;
+  display: grid;
 }
 
 nav {
   background-color: black;
   padding: 0.5em;
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 nav a {
