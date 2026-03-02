@@ -29,7 +29,7 @@ section {
 h2 {
   font: bold 25px "Arvo";
   text-transform: uppercase;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   letter-spacing: 3px;
 }
 
@@ -39,6 +39,10 @@ header {
   border-bottom: 5px solid #aa6666;
   font: bold 30px "Arvo";
   text-align: center;
+}
+
+ul {
+  list-style-type: square;
 }
 
 footer {
@@ -51,9 +55,25 @@ footer p {
 
 a {
   color: brown;
+  outline: none;
+}
+
+a:visited {
+  color: #271b0d;
 }
 
 a:hover, a:focus {
-  color: #281b0d;
+  color: #271b0d;
   text-decoration: none;
+}
+
+a[href^="http"]::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.4em;
+  vertical-align: middle;
+  background-image: url('https://mdn.github.io/shared-assets/images/examples/external-link-52.png');
+  background-size: cover;
 }
