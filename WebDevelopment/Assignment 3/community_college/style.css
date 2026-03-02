@@ -68,12 +68,7 @@ a:hover, a:focus {
 }
 
 a[href^="http"]::after {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-left: 0.4em;
-  vertical-align: middle;
+  padding-right: 15px;
   background-image: url('https://mdn.github.io/shared-assets/images/examples/external-link-52.png');
   background-size: cover;
 }
