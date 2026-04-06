@@ -10,19 +10,19 @@ function randomValueFromArray(array) {
 }
 
 // Raw text strings
-const characters = {"Willy the goblin"."Big Daddy"."Father Christmas"} 
+const characters = ["Willy the goblin", "Big Daddy", "Father Christmas"];
 
-const places = {"thesoup kitchen"."Dave'n'Busters"."the White House"} 
+const places = ["thesoup kitchen","Dave'n'Busters","the White House"];
 
-const events = {"spontaneously combusted"."melted into a puddle on the sidewalk"."turned into a slug and slithered away"} 
+const events = ["spontaneously combusted","melted into a puddle on the sidewalk","turned into a slug and slithered away"] ;
 
 // Partial return random string function
-randomCharacter randomValueFromArray(characters);
-randomPlace randomValueFromArray(places);
-randomEvent randomValueFromArray(events);
+randomCharacter = randomValueFromArray(characters);
+randomPlace = randomValueFromArray(places);
+randomEvent = randomValueFromArray(events);
 
 function returnRandomStoryString() {
-storyText = 'It was 94 Fahrenheit outside, so ${randomCharacter} went for a walk. When they got to ${randomPlace}, they stared in horror for a few moments, then ${randomEvent}. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.'
+storyText = "It was 94 Fahrenheit outside, so ${randomCharacter} went for a walk. When they got to ${randomPlace}, they stared in horror for a few moments, then ${randomEvent}. Bob saw the whole thing, but was not surprised — ${randomCharacter} weighs 300 pounds, and it was a hot day.";
 
   return storyText;
 }
@@ -32,8 +32,10 @@ storyText = 'It was 94 Fahrenheit outside, so ${randomCharacter} went for a walk
 generateBtn.addEventListener("click", generateStory);
 
 function generateStory() {
+newStory = returnRandomStoryString();
   if (customName.value !== "") {
     const name = customName.value;
+    newStory.replaceAll("Bob",name);
   }
 
   if (document.getElementById("uk").checked) {
@@ -42,6 +44,6 @@ function generateStory() {
   }
 
   // TODO: replace "" with the correct expression
-  story.textContent = "";
+  story.textContent = newStory;
   story.style.visibility = "visible";
 }
