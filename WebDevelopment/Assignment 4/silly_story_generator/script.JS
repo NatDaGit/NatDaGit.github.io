@@ -1,5 +1,3 @@
-// Complete variable definitions and random functions
-
 const customName = document.getElementById("custom-name");
 const generateBtn = document.querySelector(".generate");
 const story = document.querySelector(".story");
@@ -9,12 +7,10 @@ function randomValueFromArray(array) {
   return array[random];
 }
 
-// Raw text strings
 const characters = ["Willy the goblin", "Big Daddy", "Father Christmas"];
 const places = ["thesoup kitchen","Dave'n'Busters","the White House"];
 const events = ["spontaneously combusted", "melted into a puddle on the sidewalk","turned into a slug and slithered away"];
 
-// Partial return random string function
 const randomCharacter = randomValueFromArray(characters);
 const randomPlace = randomValueFromArray(places);
 const randomEvent = randomValueFromArray(events);
@@ -24,8 +20,6 @@ let storyText = `It was 94 Fahrenheit outside, so ${randomCharacter} went for a 
 
   return storyText;
 }
-
-// Event listener and partial generate function definition
 
 generateBtn.addEventListener("click", generateStory);
 
