@@ -19,7 +19,12 @@ const newImage = document.createElement("img");
 newImage.src = `${baseURL}${image.filename}`;
 newImage.alt = image.alt;
 thumbBar.appendChild(newImage);
-//newImage.addEventListener("click", updateDisplayyedImage);
+newImage.addEventListener("click", updateDisplayedImage);
+newImage.addEventListener("keydown", (e) => {
+if (e.code === "Enter") {
+updateDisplayedImage(e);
+}
+})
 }
 
 function updateDisplayedImage(e) {
