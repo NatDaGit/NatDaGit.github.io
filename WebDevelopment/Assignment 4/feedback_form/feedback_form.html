@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Forms challenge</title>
+    <title>Feedback Form</title>
     <!--
       Name: Nathan Hewitt
-            File: object_building_practice.html
-            Date: April 14th 2026
-            Demo for balls bouncing across the screen, but improved.
+            File: feedback_form.html
+            Date: April 17th 2026
+            Creating a form using radio, checkbox, etc.
     -->
     <link href="style.css" rel="stylesheet" />
     <script defer src="index.js"></script>
@@ -24,21 +24,42 @@
 
     <img src = "https://mdn.github.io/shared-assets/images/examples/learn/woodland-strip.jpg" alt = "" />
 
-    <h2>Facilities</h2>
     <form>
     <div class = "form-section">
+    <h2>Facilities</h2>
+    <fieldset>
     <legend>Was the porridge</legend>
     <input type="radio" id="too-hot" name="porridge" valie="hot" checked />
     <label for="too-hot">Too hot?</label>
-    <input type="radio" id="too-cold" name="porridge" valie="cold" checked />
-    <label for="too-hot">Too cold?</label>
-    <input type="radio" id="just-right" name="porridge" valie="right" checked />
-    <label for="too-hot">Just right?</label>
+    <input type="radio" id="too-cold" name="porridge" valie="cold"/>
+    <label for="too-cold">Too cold?</label>
+    <input type="radio" id="just-right" name="porridge" valie="right"/>
+    <label for="just-right">Just right?</label>
+    </fieldset>
 
-    Were the beds
-    Too hard?
-    Too soft?
-    Just right?
+    <fieldset>
+    <legend>Were the beds</legend>
+    <input type="radio" id="too-hard" name="bed" valie="hard" checked />
+    <label for="too-hard">Too hard?</label>
+    <input type="radio" id="too-cold" name="bed" valie="soft"/>
+    <label for="too-soft">Too soft?</label>
+    <input type="radio" id="just-right" name="bed" valie="right"/>
+    <label for="just-right">Just right?</label>
+    </fieldset>
+
+    <fieldset>
+    <legend>Describe the chairs (select all you agree with)</legend>
+    <input type="checkbox" id="comfy" name="comfy" />
+    <label for="comfy">Comfy</label>
+    <input type="checkbox" id="luxury" name="luxury" />
+    <label for="luxury">Luxurious</label>
+    <input type="checkbox" id="tech" name="tech" />
+    <label for="tech">Hi-tech</label>
+    <input type="checkbox" id="Pretty" name="Pretty" />
+    <label for="pretty">Pretty</label>
+    <input type="checkbox" id="majestic" name="majestic" />
+    <label for="majestic">Majestic</label>
+    </fieldset>
 
     Describe the chairs (select all you agree with)
     Comfy
@@ -47,7 +68,7 @@
     Pretty
     Majestic
 
-    --
+    </div>
 
     <h2>About your hosts</h2>
 
