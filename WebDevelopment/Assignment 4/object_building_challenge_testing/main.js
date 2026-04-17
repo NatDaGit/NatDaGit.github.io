@@ -78,9 +78,9 @@ class Ball extends Shape {
 
 class EvilCircle extends Shape {
 constructor(x, y) {
-    super(x, y, velX, velY);
-    this.color = color;
-    this.size = size;
+    super(x, y, 20, 20);
+    this.color = "white";
+    this.size = 20;
     this.exists = true;
 
 
@@ -108,21 +108,21 @@ draw() {
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.stroke();
   }
-update() {
+checkBounds() {
     if (this.x + this.size >= width) {
-      this.velX-=this.size;
+      this.x-=this.size;
     }
 
     if (this.x - this.size <= 0) {
-      this.velX+=this.size;
+      this.x += this.size;
     }
 
     if (this.y + this.size >= height) {
-      this.velY-=this.size);
+      this.y -= this.size;
     }
 
     if (this.y - this.size <= 0) {
-      this.velY+=this.size;
+      this.y += this.size;
     }
   }
 collisionDetect() {
@@ -134,7 +134,6 @@ collisionDetect() {
 
         if (distance < this.size + ball.size) {
           ball.exists = false;
-	  count = count-1;
         }
       }
     }
@@ -159,14 +158,21 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
+const evilCircle = new EvilCircle(random(0 , width), random(0, height));
+
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
+    if (ball.exists) {
     ball.draw();
     ball.update();
     ball.collisionDetect();
+  }
+  evilCircle.draw();
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
   }
 
   requestAnimationFrame(loop);
