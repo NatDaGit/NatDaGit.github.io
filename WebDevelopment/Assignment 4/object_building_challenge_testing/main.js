@@ -1,5 +1,8 @@
 // set up canvas
 
+const counter = document.querySelector('p');
+let count = 0;
+
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -134,6 +137,8 @@ collisionDetect() {
 
         if (distance < this.size + ball.size) {
           ball.exists = false;
+          count--;
+          counter.textContent = 'Ball count: ' + count;
         }
       }
     }
@@ -154,7 +159,8 @@ while (balls.length < 25) {
     randomRGB(),
     size
   );
-
+  count++;
+  counter.textContent = `Ball count: ` + count;
   balls.push(ball);
 }
 
